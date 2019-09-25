@@ -1,6 +1,9 @@
-node {
-    def mvnHome = tool name: 'mvn122', type: 'maven'
-    def mvnCli = "${mvnHome}/bin/mvn"
+pipeline {
+    environment {
+        
+    mvnHome = tool name: 'mvn122', type: 'maven'
+    mvnCli = "${mvnHome}/bin/mvn"
+    }
  agent any 
  stages{
      stage('Checkout SCM'){
