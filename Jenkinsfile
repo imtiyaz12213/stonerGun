@@ -17,15 +17,17 @@ environment {
     stage('Build') {
 	    steps{
 		    
-			    sh "${mvnCli} clean compile"
+			    sh "${mvnCli} clean compile "
 		    
 	            }
 		}
 		
 	stage('maven package'){
         steps{
-             sh "$(mvnCli} package"	
-              }
+		
+             sh "$(mvnCli) package"	
+        
+		}
             }			  
 		
 		
