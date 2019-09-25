@@ -9,16 +9,16 @@ environment {
   stages {
     stage('Checkout SCM') {
 	steps {
-         {
+         
           git credentialsId: 'githu', url: 'https://github.com/imtiyaz12213/PetClinic.git'
-	 }
+	 
 	}
 	}
     stage('Build') {
 	    steps{
-		    {
+		    
 			    sh "${mvnCli} clean compile"
-		    }
+		    
 	            }
 		}
 		
