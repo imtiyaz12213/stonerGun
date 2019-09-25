@@ -9,11 +9,18 @@ environment {
   stages {
     stage('Checkout SCM') {
 	steps {
-        // using the Pipeline Maven plugin we can set maven configuration settings, publish test results, and annotate the Jenkins console
-        withMaven(options: [findbugsPublisher(), junitPublisher(ignoreAttachments: false)]) {
-          sh 'mvn clean findbugs:findbugs package'
-        }
+         {
+          git credentialsId: 'githu', url: 'https://github.com/imtiyaz12213/PetClinic.git'
+	 }
+	}
+	}
+    stage('Build') {
+	    steps{
+		    {
+			    sh "${mvnCli} clean compile"
+		    }
+	            }
 		}
-		}
+		
 		}
 		}
