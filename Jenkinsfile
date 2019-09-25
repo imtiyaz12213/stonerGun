@@ -28,7 +28,17 @@ environment {
              sh "/bin/mvn package"	
         
 		}
-            }			  
+            }
+
+    stage('Deploy To Tomcat'){
+	    steps{
+		
+		      deploy adapters: [tomcat9(credentialsId: '13b583ce-0a8e-45f4-aa2d-b50603fdd198', path: '', url: 'http://18.188.40.235:8080')], contextPath: 'webapp', war: '**/*.war'
+			  
+			  }
+			  
+			  }
+	
 		
 		
      		}
