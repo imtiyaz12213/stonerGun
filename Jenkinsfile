@@ -24,7 +24,7 @@ environment {
 		
 	stage('maven package'){
         steps{
-             sh "$(mvnCli} package	
+             sh "$(mvnCli} package"	
               }
             }			  
 		
